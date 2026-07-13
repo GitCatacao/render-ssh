@@ -14,7 +14,7 @@ RUN curl -sSL https://ngrok-agent.s3.amazonaws.com/ngrok.asc \
     && rm -rf /var/lib/apt/lists/*
 
 RUN useradd -m -u 1000 user && echo "user:password" | chpasswd
-RUN mkdir /var/run/sshd
+RUN mkdir -p /var/run/sshd
 
 RUN echo '#!/bin/bash\n\
 service ssh start\n\
